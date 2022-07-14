@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
-}
+.navbar{
+  background-color: #3B5EDA;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 75px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbarSupportedContent{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding-left: 20%;
 }
-
-.App-link {
-  color: #61dafb;
+.navbar-brand{
+  padding-left: 64PX;
 }
+#navbarSupportedContent a{
+    width: 95px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+}
+.navbar-brand{
+  color: #FFFFFF;
+}
+#nav_end{
+  position: absolute;
+  padding-left: 5%;
+  padding-top: 1.5%;
+    width: 15%;
+    left: 85%;
+    height: 75px;
+    background: #000000;
+    float: right;
+}
+#nav_end_text{
+  width: 95px;
+  height: 19px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: #FFFFFF;
+}
+.body1{
+ 
+}
+#container1{
+  padding-bottom: 170px;
+  
+}
+.greet{
+  width: 302px;
+    height: 27px;
+    margin-left: 88px;
+    margin-top: 170px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+  
+    font-feature-settings: 'liga' off;
+  
+    color: #1D1D1D;
+}
+.tag{
+  width: 378px;
+    height: 192px;
+    margin-left: 88px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+    /* or 133% */
+  
+    letter-spacing: 0.01em;
+  
+    color: #000000;
+}
+.description{
+  width: 423px;
+    height: 81px;
+    margin-left: 88px;  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    /* or 27px */
+  
+    font-feature-settings: 'liga' off;
+  
+    color: #1D1D1D;
+}
+#body_social_logos{
+  width: 217.12px;
+  margin-left: 88px;
+  height: 24.28px;
+  background-color: blue;
+  display: flex;
+}
+.logo1{
+  width: 24.28px;
+  height: 24.28px;
+  border: 1px solid black;
+}
+#container2-{
+  
 }
