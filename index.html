@@ -27,6 +27,43 @@
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Email Js link -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('aJvG5acG9PLS3kslT');
+      })();
+      function sendEmail() {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get the form input values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value;
+      
+      // Prepare the email template parameters
+      var templateParams = {
+        from_name: name,
+        from_email: email,
+        from_subject: subject,
+        message: message
+      };
+      
+      // Send the email
+      emailjs.send('service_9e2gn1b', 'template_z0yzail', templateParams)
+        .then(function(response) {
+          console.log('Email sent successfully!', response.status, response.text);
+          alert('Email sent successfully!');
+          document.getElementById('contactForm').reset(); // Reset the form after successful submission
+        }, function(error) {
+          console.log('Error sending email:', error);
+          alert('An error occurred while sending the email.');
+        });
+    }
+  </script>
+
 </head>
 
 <body>
@@ -56,11 +93,11 @@
       <h1>Malla V V Jaggarao Naidu</h1>
       <p>I'm <span class="typed" data-typed-items="Developer, Freelancer"></span></p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/hemanth-naidu/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/hemanth0615" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://twitter.com/hemanth0615" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100008976850298" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/_this_is_hemanth/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/hemanth-naidu/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/hemanth0615" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://twitter.com/hemanth0615" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100008976850298" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/_this_is_hemanth/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -86,7 +123,7 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>13th September 2001</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span> <a target="_blank" href="https://hemanth0615.github.io/HemanthPortfolio/">www.vvjnaidu.com</a></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+919133377162</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Hyderabad, India</span></li>
                 </ul>
@@ -95,7 +132,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Pursuing B.Tech</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>whemanthnaidu@example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>whemanthnaidu@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
@@ -112,8 +149,7 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Proficient in a comprehensive set of web development skills, including HTML, CSS, JavaScript, React, Node.js, MongoDB, Express, and SQL, enabling the creation of dynamic and user-friendly web applications.
-</p>
+          <p>Proficient in a comprehensive set of web development skills, including HTML, CSS, JavaScript, React, Node.js, MongoDB, Express, and SQL, enabling the creation of dynamic and user-friendly web applications.</p>
         </div>
 
         <div class="row skills-content">
@@ -201,7 +237,7 @@
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
               <h4>BTech in Computer Science Engineering (CSE)</h4>
-              <h5>2015 - 2016</h5>
+              <h5>2020 - 2024</h5>
               <p><em>Institute of Aeronautical Engineering, Dundigal, Hyderabad, Telangana</em></p>
             </div>
             <div class="resume-item">
@@ -239,7 +275,7 @@
           <div class="col-lg-6">
             <h3 class="resume-title">Projects</h3>
             <div class="resume-item">
-              <h4>NFC Solutions Company Website <a href="">↗</a></h4>
+              <h4>NFC Solutions Company Website <a target="_blank" href="https://nfcsolutionsusa.com/">↗</a></h4>
               <h5>2022</h5>
               <ul>
                 <li> Duration: 2 months, Team Size: 3, Role: Team Lead Developed 9pages.</li>
@@ -248,7 +284,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Task Website <a href="">↗</a></h4>
+              <h4>Task Website <a target="_blank" href="https://taskmanager.info/">↗</a></h4>
               <h5>2022</h5>
               <ul>
                 <li>Duration: 20 days, Team Size: 1, Role: Developed the entire website</li>
@@ -257,24 +293,37 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>TEDx IARE Website <a href="">↗</a></h4>
+              <h4>TEDx IARE Website <a target="_blank" href="https://tedxiare.com/">↗</a></h4>
               <h5>2022</h5>
               <ul>
                 <li>Duration: 10 days, Team Size: 1, Role: Developed the entire website</li>
                 <li>Designed and implemented the TEDx IARE website, providing participants with a seamless experience to book tickets for the event through secure payment processing.</li>
-                <li> Technologies used: HTML, CSS, JavaScript, Bootstrap, React.</li>
+                <li>Technologies used: HTML, CSS, JavaScript, Bootstrap, React.</li>
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Blog Website <a href="">↗</a></h4>
+              <h4>Blog Website <a target="_blank" href="https://drive.google.com/drive/folders/1D88UIdSFqY3LvjiReIgQpk1-eslgnxf7?usp=share_link">↗</a></h4>
               <h5>2022</h5>
               <ul>
                 <li>Duration: 5 days, Team Size: 1, Role: Developed the entire website</li>
                 <li>Developed a full-stack blog website using MERN stack, featuring CRUD operations,user-friendly interface, and seamless communication between front-end and backend components.</li>
-                <li> Utilized technologies like React, Express.js, MongoDB, and Axios, with thorough testing using Postman</li>
+                <li>Technologies Used: React, Express.js, MongoDB, and Axios, with thorough testing using Postman</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Blog Website <a target="_blank" href="#">↗</a></h4>
+              <h5>2022</h5>
+              <ul>
+                <li>Duration: 1 days, Team Size: 1, Role: Developed the entire website</li>
+                <li>Created a portfolio website highlighting my projects, skills, and web development expertise, showcasing a passion for impactful and visually appealing online experiences.</li>
+                <li>Technologies Used: HTML, CSS, JavaScript, Bootstrap</li>
               </ul>
             </div>
           </div>
+          </div>
+
+          
+
         </div>
 
       </div>
@@ -292,7 +341,7 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
               <li data-filter=".filter-web">Web</li>
             </ul>
           </div>
@@ -396,7 +445,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contact-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -409,14 +458,14 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" id="message" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" onclick="sendEmail()">Send Message</button></div>
             </form>
 
           </div>
